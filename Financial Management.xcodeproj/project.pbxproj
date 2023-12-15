@@ -18,6 +18,8 @@
 		04208F922B2B6A490036258B /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04208F912B2B6A490036258B /* AddTransactionViewController.swift */; };
 		04208F952B2B7FCF0036258B /* TransactionHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04208F932B2B7FCF0036258B /* TransactionHomeCollectionViewCell.swift */; };
 		04208F962B2B7FCF0036258B /* TransactionHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04208F942B2B7FCF0036258B /* TransactionHomeCollectionViewCell.xib */; };
+		04208F982B2CA84D0036258B /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04208F972B2CA84D0036258B /* Wallet.swift */; };
+		04208F9A2B2CAE010036258B /* AddWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04208F992B2CAE010036258B /* AddWalletViewController.swift */; };
 		0472FCFA2B2A1C02006D0529 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0472FCF92B2A1C02006D0529 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,8 @@
 		04208F912B2B6A490036258B /* AddTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
 		04208F932B2B7FCF0036258B /* TransactionHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		04208F942B2B7FCF0036258B /* TransactionHomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionHomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		04208F972B2CA84D0036258B /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		04208F992B2CAE010036258B /* AddWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWalletViewController.swift; sourceTree = "<group>"; };
 		0472FCF92B2A1C02006D0529 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,8 +95,9 @@
 			isa = PBXGroup;
 			children = (
 				0472FCF92B2A1C02006D0529 /* HomeViewController.swift */,
-				04208F8D2B2AAA590036258B /* TransactionHomeTableViewCell.swift */,
+				04208F992B2CAE010036258B /* AddWalletViewController.swift */,
 				04208F912B2B6A490036258B /* AddTransactionViewController.swift */,
+				04208F8D2B2AAA590036258B /* TransactionHomeTableViewCell.swift */,
 				04208F932B2B7FCF0036258B /* TransactionHomeCollectionViewCell.swift */,
 			);
 			path = Controller;
@@ -113,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				04208F8B2B2A9F5F0036258B /* Transaction.swift */,
+				04208F972B2CA84D0036258B /* Wallet.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,9 +196,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04208F982B2CA84D0036258B /* Wallet.swift in Sources */,
 				041154C22B0BA4FE00AF439D /* AppDelegate.swift in Sources */,
 				04208F8F2B2AAA590036258B /* TransactionHomeTableViewCell.swift in Sources */,
 				041154C42B0BA4FE00AF439D /* SceneDelegate.swift in Sources */,
+				04208F9A2B2CAE010036258B /* AddWalletViewController.swift in Sources */,
 				04208F952B2B7FCF0036258B /* TransactionHomeCollectionViewCell.swift in Sources */,
 				04208F922B2B6A490036258B /* AddTransactionViewController.swift in Sources */,
 				04208F8C2B2A9F5F0036258B /* Transaction.swift in Sources */,

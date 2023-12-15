@@ -101,7 +101,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="Btn"/>
                                 <connections>
-                                    <action selector="addMoneyBtnTapped:" destination="VcZ-7i-iVq" eventType="touchUpInside" id="HTE-Wr-8CP"/>
+                                    <action selector="addTransactionBtnTapped:" destination="VcZ-7i-iVq" eventType="touchUpInside" id="X4N-1Q-t7b"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VNĐ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1G-6F-pdi">
@@ -116,6 +116,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="Add Btn"/>
+                                <connections>
+                                    <action selector="addWalletBtnTapped:" destination="VcZ-7i-iVq" eventType="touchUpInside" id="ptY-ZM-x3a"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXC-z2-vPJ">
                                 <rect key="frame" x="9" y="59" width="125" height="21"/>
@@ -151,11 +154,115 @@
                         <outlet property="collectionView" destination="HME-dq-Ub6" id="Mhl-gZ-A90"/>
                         <outlet property="tableView" destination="zBc-KF-QKG" id="Op2-Jj-4e1"/>
                         <segue destination="4vp-zd-Ig3" kind="presentation" identifier="addTransactionSegue" modalPresentationStyle="formSheet" id="mNf-KX-ex6"/>
+                        <segue destination="Iel-ZO-6f4" kind="presentation" identifier="addWalletSegue" modalPresentationStyle="formSheet" id="b22-Hm-7wx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="274-NC-xdK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-631.29770992366412" y="381.69014084507046"/>
+        </scene>
+        <!--Add Wallet View Controller-->
+        <scene sceneID="lNJ-ZA-64n">
+            <objects>
+                <viewController id="AWV-yg-bhm" customClass="AddWalletViewController" customModule="Financial_Management" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oYL-7m-NM9">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b7M-Qd-hkK">
+                                <rect key="frame" x="0.0" y="56" width="393" height="786"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add new wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3g-Lf-a7H">
+                                        <rect key="frame" x="35" y="0.0" width="205" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wallet name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APM-0s-Bcs">
+                                        <rect key="frame" x="35" y="176" width="190" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6f-IG-rXp">
+                                        <rect key="frame" x="35" y="283" width="190" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lul-og-KGs">
+                                        <rect key="frame" x="35" y="398" width="190" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gnk-Lt-q15">
+                                        <rect key="frame" x="35" y="205" width="293" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="AWV-yg-bhm" id="STK-T9-Y58"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jDe-wX-lej">
+                                        <rect key="frame" x="35" y="312" width="293" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="AWV-yg-bhm" id="vsM-4g-Ud0"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mpV-aQ-LIi">
+                                        <rect key="frame" x="35" y="427" width="293" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="AWV-yg-bhm" id="QZK-rE-k8S"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sN-1H-gxs">
+                                        <rect key="frame" x="100" y="561" width="193" height="51"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.14901960780000001" green="0.89411764709999997" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Done">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="doneBtnTapped:" destination="AWV-yg-bhm" eventType="touchUpInside" id="0eA-YC-kxJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JF5-Mt-vpG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="b7M-Qd-hkK" firstAttribute="centerY" secondItem="JF5-Mt-vpG" secondAttribute="centerY" id="2M8-vq-lm6"/>
+                            <constraint firstItem="b7M-Qd-hkK" firstAttribute="width" secondItem="JF5-Mt-vpG" secondAttribute="width" id="Y47-As-2hM"/>
+                            <constraint firstItem="b7M-Qd-hkK" firstAttribute="centerX" secondItem="JF5-Mt-vpG" secondAttribute="centerX" id="rs2-yx-4Ks"/>
+                            <constraint firstItem="b7M-Qd-hkK" firstAttribute="height" secondItem="JF5-Mt-vpG" secondAttribute="height" id="yR3-9a-L6e"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kPG-mg-vRc"/>
+                    <connections>
+                        <outlet property="amountTf" destination="mpV-aQ-LIi" id="Wc1-wl-wAx"/>
+                        <outlet property="doneBtn" destination="8sN-1H-gxs" id="brp-jp-1Od"/>
+                        <outlet property="iconTf" destination="jDe-wX-lej" id="ibH-SE-Ieg"/>
+                        <outlet property="walletNameTf" destination="Gnk-Lt-q15" id="W4n-gi-FGZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g51-UN-H0Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1796.1832061068701" y="1991.549295774648"/>
         </scene>
         <!--Add Transaction View Controller-->
         <scene sceneID="C8x-lS-V9F">
@@ -276,7 +383,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LlD-dJ-1b6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-631.29770992366412" y="1957.7464788732395"/>
+            <point key="canvasLocation" x="-631" y="1992"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nRu-Hp-2wl">
@@ -330,6 +437,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtG-di-ElQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-631" y="1186"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PBC-Nd-R3e">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Iel-ZO-6f4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pbf-4U-RUi">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AWV-yg-bhm" kind="relationship" relationship="rootViewController" id="oSZ-3n-Gji"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9P0-QN-gSP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1795" y="1186"/>
         </scene>
     </scenes>
     <resources>

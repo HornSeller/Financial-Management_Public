@@ -8,8 +8,9 @@
 import UIKit
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
+        myWallets.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -32,7 +33,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
-
+    let dateFormatter = DateFormatter()
     var userDefaults = UserDefaults.standard
     let numberFormatter = NumberFormatter()
     var myTransactions: [TransactionItem] {
@@ -43,7 +44,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             Transaction.shared.transactions = newValue
         }
     }
-        let dateFormatter = DateFormatter()
+    var myWallets: [ExpenseItem] {
+        get {
+            return Wallet.shared.expenses
+        }
+        set {
+            Wallet.shared.expenses = newValue
+        }
+    }
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
@@ -51,7 +59,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var balanceLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.reloadData()
+        collectionView.reloadData()
+        NotificationCenter.default.addObserver(self, selector: #selector(walletDidAddNotification), name: Notification.Name("WalletDidAdd"), object: nil)
+                
         dateFormatter.dateFormat = "dd MMM yyyy"
         
         numberFormatter.numberStyle = .decimal
@@ -78,12 +89,21 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             myTransactions.append(TransactionItem(title: "Test2", category: "test", amount: 20, date: Date(), type: .income))
             myTransactions.append(TransactionItem(title: "Test3", category: "test", amount: 30, date: Date(), type: .expense))
         }
-
+        
         balanceLabel.text = numberFormatter.string(from: self.userDefaults.value(forKey: "balance") as! NSNumber)
         print(userDefaults.value(forKey: "balance"))
     }
-
-    @IBAction func addMoneyBtnTapped(_ sender: UIButton) {
+    
+    @objc func walletDidAddNotification() {
+        // Reload UICollectionView khi nhận được thông báo "WalletDidAdd"
+        collectionView.reloadData()
+    }
+        
+    @IBAction func addWalletBtnTapped(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "addWalletSegue", sender: self)
+    }
+    
+    @IBAction func addTransactionBtnTapped(_ sender: UIButton) {
 //        let alert = UIAlertController(title: "Enter the transaction", message: nil, preferredStyle: .alert)
 //        alert.addTextField() { (textfield) in
 //            textfield.placeholder = "Enter amount here"
@@ -110,5 +130,4 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func viewAllBtnTapped(_ sender: UIButton) {
         print(myTransactions)
     }
-    
 }
