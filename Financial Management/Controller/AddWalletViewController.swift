@@ -9,12 +9,12 @@ import UIKit
 
 class AddWalletViewController: UIViewController, UITextFieldDelegate {
     
-    var myWallets: [ExpenseItem] {
+    var myWallets: [WalletItem] {
         get {
-            return Wallet.shared.expenses
+            return Wallet.shared.wallets
         }
         set {
-            Wallet.shared.expenses = newValue
+            Wallet.shared.wallets = newValue
         }
     }
     
@@ -46,7 +46,7 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
         
         if let text = amountTf.text, let amount = Double(text) {
             // Successfully converted text to a Double
-            let newWallet = ExpenseItem(name: walletNameTf.text!, icon: iconTf.text!, amount: amount)
+            let newWallet = WalletItem(name: walletNameTf.text!, icon: iconTf.text!, amount: amount, used: 0)
             myWallets.append(newWallet)
             self.dismiss(animated: true) {
                 NotificationCenter.default.post(name: Notification.Name("WalletDidAdd"), object: nil)

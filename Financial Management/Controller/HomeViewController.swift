@@ -15,6 +15,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionHomeCell", for: indexPath) as! TransactionHomeCollectionViewCell
+        cell.titleLb.text = myWallets[indexPath.row].name
+        cell.balanceLb.text = numberFormatter.string(for: myWallets[indexPath.row].amount - myWallets[indexPath.row].used)
+        cell.moreBtn.showsMenuAsPrimaryAction = true
+        cell.moreBtn.menu = UIMenu(title: "", options: .displayInline, children: [
+            UIAction(title: "Delete", handler: { (_) in
+                
+            }),
+            
+            UIAction(title: "Edit", handler: { (_) in
+                
+            })
+        ])
         
         return cell
     }
@@ -44,12 +56,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             Transaction.shared.transactions = newValue
         }
     }
-    var myWallets: [ExpenseItem] {
+    var myWallets: [WalletItem] {
         get {
-            return Wallet.shared.expenses
+            return Wallet.shared.wallets
         }
         set {
-            Wallet.shared.expenses = newValue
+            Wallet.shared.wallets = newValue
         }
     }
     
@@ -62,7 +74,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.reloadData()
         collectionView.reloadData()
         NotificationCenter.default.addObserver(self, selector: #selector(walletDidAddNotification), name: Notification.Name("WalletDidAdd"), object: nil)
-                
+        print(myWallets)
         dateFormatter.dateFormat = "dd MMM yyyy"
         
         numberFormatter.numberStyle = .decimal

@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct ExpenseItem: Codable {
+struct WalletItem: Codable {
     var name: String
     var icon: String
     var amount: Double
+    var used: Double
 }
 
 class Wallet {
@@ -19,14 +20,14 @@ class Wallet {
     
     private init() {}
     
-    var expenses: [ExpenseItem] {
+    var wallets: [WalletItem] {
         get {
-            if let data = UserDefaults.standard.value(forKey: "expenses") as? Data {
+            if let data = UserDefaults.standard.value(forKey: "wallets") as? Data {
                 do {
-                    let expenses = try PropertyListDecoder().decode([ExpenseItem].self, from: data)
+                    let expenses = try PropertyListDecoder().decode([WalletItem].self, from: data)
                     return expenses
                 } catch {
-                    print("Failed to decode expenses")
+                    print("Failed to decode wallets")
                 }
             }
             return []
@@ -34,9 +35,9 @@ class Wallet {
         set {
             do {
                 let data = try PropertyListEncoder().encode(newValue)
-                UserDefaults.standard.set(data, forKey: "expenses")
+                UserDefaults.standard.set(data, forKey: "wallets")
             } catch {
-                print("Failed to encode expenses")
+                print("Failed to encode wallets")
             }
         }
     }

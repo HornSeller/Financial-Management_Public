@@ -9,6 +9,9 @@ import UIKit
 
 class TransactionHomeCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var titleLb: UILabel!
+    @IBOutlet weak var balanceLb: UILabel!
+    @IBOutlet weak var moreBtn: UIButton!
     @IBOutlet weak var view: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
