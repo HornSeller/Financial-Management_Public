@@ -35,7 +35,6 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func doneBtnTapped(_ sender: UIButton) {
-        print("Giang cho")
         if walletNameTf.text == "" || iconTf.text == "" || amountTf.text == "" {
             let alert = UIAlertController(title: "Error", message: "Textfield must not be empty", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
@@ -46,7 +45,7 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
         
         if let text = amountTf.text, let amount = Double(text) {
             // Successfully converted text to a Double
-            let newWallet = WalletItem(name: walletNameTf.text!, icon: iconTf.text!, amount: amount, used: 0)
+            let newWallet = WalletItem(name: walletNameTf.text!, icon: iconTf.text!, amount: amount)
             myWallets.append(newWallet)
             self.dismiss(animated: true) {
                 NotificationCenter.default.post(name: Notification.Name("WalletDidAdd"), object: nil)

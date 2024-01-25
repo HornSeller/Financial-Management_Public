@@ -11,7 +11,6 @@ struct WalletItem: Codable {
     var name: String
     var icon: String
     var amount: Double
-    var used: Double
 }
 
 class Wallet {

@@ -16,7 +16,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionHomeCell", for: indexPath) as! TransactionHomeCollectionViewCell
         cell.titleLb.text = myWallets[indexPath.row].name
-        cell.balanceLb.text = numberFormatter.string(for: myWallets[indexPath.row].amount - myWallets[indexPath.row].used)
+        cell.balanceLb.text = numberFormatter.string(for: myWallets[indexPath.row].amount)
         cell.moreBtn.showsMenuAsPrimaryAction = true
         cell.moreBtn.menu = UIMenu(title: "", options: .displayInline, children: [
             UIAction(title: "Delete", handler: { (_) in
@@ -32,7 +32,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -67,17 +67,22 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var addMoneyBtn: UIButton!
+    @IBOutlet weak var addTransactionBtn: UIButton!
     @IBOutlet weak var balanceLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        addTransactionBtn.layer.cornerRadius = addTransactionBtn.frame.size.height / 2 - 1
+        numberFormatter.numberStyle = .decimal
         tableView.reloadData()
         collectionView.reloadData()
+        
+        updateBalance()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(walletDidAddNotification), name: Notification.Name("WalletDidAdd"), object: nil)
         print(myWallets)
         dateFormatter.dateFormat = "dd MMM yyyy"
         
-        numberFormatter.numberStyle = .decimal
+        myTransactions.removeAll()
         
         tableView.register(UINib(nibName: "TransactionHomeTableViewCell", bundle: .main), forCellReuseIdentifier: "tableHomeCell")
         tableView.rowHeight = 0.203562 * view.frame.size.width
@@ -90,25 +95,25 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.scrollDirection = .horizontal
         collectionView.collectionViewLayout = layout
-        
-        if userDefaults.value(forKey: "balance") == nil {
-            userDefaults.set(0.0, forKey: "balance")
-            userDefaults.synchronize()
-        }
-        
+
         if myTransactions.count == 0 {
             myTransactions.append(TransactionItem(title: "Test1", category: "test", amount: 10, date: Date(), type: .expense))
             myTransactions.append(TransactionItem(title: "Test2", category: "test", amount: 20, date: Date(), type: .income))
             myTransactions.append(TransactionItem(title: "Test3", category: "test", amount: 30, date: Date(), type: .expense))
+            myTransactions.append(TransactionItem(title: "Test3", category: "test", amount: 30, date: Date(), type: .expense))
+            myTransactions.append(TransactionItem(title: "Test3", category: "test", amount: 30, date: Date(), type: .expense))
+            myTransactions.append(TransactionItem(title: "Test3", category: "test", amount: 30, date: Date(), type: .expense))
+            myTransactions.append(TransactionItem(title: "Test3", category: "test", amount: 30, date: Date(), type: .expense))
+            myTransactions.append(TransactionItem(title: "Test3", category: "test", amount: 30, date: Date(), type: .expense))
+            myTransactions.append(TransactionItem(title: "Test3", category: "test", amount: 30, date: Date(), type: .expense))
+            myTransactions.append(TransactionItem(title: "Test3", category: "test", amount: 30, date: Date(), type: .expense))
         }
-        
-        balanceLabel.text = numberFormatter.string(from: self.userDefaults.value(forKey: "balance") as! NSNumber)
-        print(userDefaults.value(forKey: "balance"))
     }
     
     @objc func walletDidAddNotification() {
         // Reload UICollectionView khi nhận được thông báo "WalletDidAdd"
         collectionView.reloadData()
+        updateBalance()
     }
         
     @IBAction func addWalletBtnTapped(_ sender: UIButton) {
@@ -141,5 +146,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func viewAllBtnTapped(_ sender: UIButton) {
         print(myTransactions)
+    }
+    
+    func updateBalance() {
+        var balance: Double = 0
+        for wallet in myWallets {
+            balance += wallet.amount
+        }
+        balanceLabel.text = numberFormatter.string(for: balance)
     }
 }

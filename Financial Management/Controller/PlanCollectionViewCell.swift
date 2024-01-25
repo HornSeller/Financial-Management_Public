@@ -8,7 +8,7 @@
 import UIKit
 
 class PlanCollectionViewCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var planNameLb: UILabel!
     @IBOutlet weak var walletNameLb: UILabel!
     @IBOutlet weak var totalLb: UILabel!

@@ -9,7 +9,7 @@ import Foundation
 
 struct PlanItem: Codable {
     var name: String
-    var forWallet: WalletItem
+    var forWallet: String
     var amount: Double
     var used: Double
 }

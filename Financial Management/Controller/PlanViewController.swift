@@ -9,19 +9,37 @@ import UIKit
 
 class PlanViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        4
+        myPlans.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "planCell", for: indexPath) as! PlanCollectionViewCell
+        cell.planNameLb.text = myPlans[indexPath.row].name
+        cell.walletNameLb.text = myPlans[indexPath.row].forWallet
+        cell.totalLb.text = numberformatter.string(for: myPlans[indexPath.row].amount)
+        cell.spendLb.text = numberformatter.string(for: myPlans[indexPath.row].used)
         
         return cell
     }
     
+    var myPlans: [PlanItem] {
+        get {
+            return Plan.shared.plans
+        }
+        set {
+            Plan.shared.plans = newValue
+        }
+    }
 
+    let numberformatter = NumberFormatter()
+    
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        numberformatter.numberStyle = .decimal
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(planDidAddNotification), name: Notification.Name("PlanDidAdd"), object: nil)
 
         collectionView.register(UINib(nibName: "PlanCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "planCell")
         
@@ -36,6 +54,10 @@ class PlanViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     
     @IBAction func addPlanBtnTapped(_ sender: UIButton) {
         self.performSegue(withIdentifier: "planSegue", sender: self)
+    }
+    
+    @objc func planDidAddNotification() {
+        collectionView.reloadData()
     }
     
 }
