@@ -18,6 +18,10 @@ class PlanViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         cell.walletNameLb.text = myPlans[indexPath.row].forWallet
         cell.totalLb.text = numberformatter.string(for: myPlans[indexPath.row].amount)
         cell.spendLb.text = numberformatter.string(for: myPlans[indexPath.row].used)
+        cell.progressView.progress = Float(myPlans[indexPath.row].used / myPlans[indexPath.row].amount)
+        if myPlans[indexPath.row].used / myPlans[indexPath.row].amount > 1 {
+            cell.progressView.progressTintColor = .red
+        }
         
         return cell
     }
@@ -36,10 +40,11 @@ class PlanViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(myPlans)
         numberformatter.numberStyle = .decimal
         
         NotificationCenter.default.addObserver(self, selector: #selector(planDidAddNotification), name: Notification.Name("PlanDidAdd"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(transactionDidAddNotification), name: Notification.Name("TransactionDidAdd"), object: nil)
 
         collectionView.register(UINib(nibName: "PlanCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "planCell")
         
@@ -54,6 +59,10 @@ class PlanViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     
     @IBAction func addPlanBtnTapped(_ sender: UIButton) {
         self.performSegue(withIdentifier: "planSegue", sender: self)
+    }
+    
+    @objc func transactionDidAddNotification() {
+        collectionView.reloadData()
     }
     
     @objc func planDidAddNotification() {

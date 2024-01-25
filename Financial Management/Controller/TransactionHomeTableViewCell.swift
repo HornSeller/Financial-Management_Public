@@ -10,7 +10,7 @@ import UIKit
 class TransactionHomeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var title: UILabel?
-    @IBOutlet weak var category: UILabel?
+    @IBOutlet weak var wallet: UILabel?
     @IBOutlet weak var amount: UILabel?
     @IBOutlet weak var date: UILabel?
     

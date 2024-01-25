@@ -75,6 +75,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="planNameLb" destination="Fge-dd-oQg" id="k0E-Al-X34"/>
+                <outlet property="progressView" destination="nrs-3G-6Y6" id="cv8-bP-MYB"/>
                 <outlet property="spendLb" destination="7gC-br-LWK" id="o0K-DZ-jD4"/>
                 <outlet property="subview" destination="Std-pb-aps" id="caw-VL-S0h"/>
                 <outlet property="totalLb" destination="8cJ-mC-UgO" id="sWT-dm-hjp"/>

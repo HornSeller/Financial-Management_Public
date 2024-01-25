@@ -17,11 +17,20 @@ class AddPlanViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        myWallets[row].name
+        guard !myWallets.isEmpty else {
+            return nil
+        }
+        return myWallets[row].name
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        forWalletTf.text = myWallets[row].name
+        if !myWallets.isEmpty {
+            forWalletTf.text = myWallets[row].name
+        } else {
+            let alert = UIAlertController(title: "Error", message: "Please add wallet first", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
+        }
     }
     
     var myWallets: [WalletItem] {
@@ -50,8 +59,11 @@ class AddPlanViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var forWalletTf: UITextField!
     @IBOutlet weak var planNameTf: UITextField!
     @IBOutlet weak var amountTf: UITextField!
+    @IBOutlet weak var doneBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        doneBtn.layer.cornerRadius = doneBtn.frame.size.height / 2 - 1
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         view.addGestureRecognizer(tapGesture)

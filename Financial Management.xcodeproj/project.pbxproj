@@ -21,6 +21,7 @@
 		04208F982B2CA84D0036258B /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04208F972B2CA84D0036258B /* Wallet.swift */; };
 		04208F9A2B2CAE010036258B /* AddWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04208F992B2CAE010036258B /* AddWalletViewController.swift */; };
 		0472FCFA2B2A1C02006D0529 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0472FCF92B2A1C02006D0529 /* HomeViewController.swift */; };
+		04E98F512B62E542002D98C0 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E98F502B62E542002D98C0 /* ColorExtension.swift */; };
 		9AEBB7752B5FA8480044DEA9 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBB7742B5FA8480044DEA9 /* PlanViewController.swift */; };
 		9AEBB7782B5FABDE0044DEA9 /* PlanCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBB7762B5FABDE0044DEA9 /* PlanCollectionViewCell.swift */; };
 		9AEBB7792B5FABDE0044DEA9 /* PlanCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AEBB7772B5FABDE0044DEA9 /* PlanCollectionViewCell.xib */; };
@@ -45,6 +46,7 @@
 		04208F972B2CA84D0036258B /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		04208F992B2CAE010036258B /* AddWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWalletViewController.swift; sourceTree = "<group>"; };
 		0472FCF92B2A1C02006D0529 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		04E98F502B62E542002D98C0 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		9AEBB7742B5FA8480044DEA9 /* PlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		9AEBB7762B5FABDE0044DEA9 /* PlanCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCollectionViewCell.swift; sourceTree = "<group>"; };
 		9AEBB7772B5FABDE0044DEA9 /* PlanCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				04208F8B2B2A9F5F0036258B /* Transaction.swift */,
 				04208F972B2CA84D0036258B /* Wallet.swift */,
 				9AEBB77C2B5FBF190044DEA9 /* Plan.swift */,
+				04E98F502B62E542002D98C0 /* ColorExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				041154C22B0BA4FE00AF439D /* AppDelegate.swift in Sources */,
 				04208F8F2B2AAA590036258B /* TransactionHomeTableViewCell.swift in Sources */,
 				9AEBB77D2B5FBF190044DEA9 /* Plan.swift in Sources */,
+				04E98F512B62E542002D98C0 /* ColorExtension.swift in Sources */,
 				041154C42B0BA4FE00AF439D /* SceneDelegate.swift in Sources */,
 				9AEBB77B2B5FBEBF0044DEA9 /* AddPlanViewController.swift in Sources */,
 				04208F9A2B2CAE010036258B /* AddWalletViewController.swift in Sources */,

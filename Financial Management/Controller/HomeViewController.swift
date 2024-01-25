@@ -32,15 +32,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        myTransactions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableHomeCell", for: indexPath) as! TransactionHomeTableViewCell
         cell.title?.text = myTransactions[indexPath.row].title
-        cell.category?.text = myTransactions[indexPath.row].category
-        cell.amount?.text = String(myTransactions[indexPath.row].amount)
+        cell.wallet?.text = myTransactions[indexPath.row].inWallet
+        cell.amount?.text = numberFormatter.string(for: myTransactions[indexPath.row].amount)
         cell.date?.text = dateFormatter.string(from: myTransactions[indexPath.row].date)
+        if myTransactions[indexPath.row].type == .income {
+            cell.amount?.textColor = UIColor(hex: "#22BB7B", alpha: 1)
+        } else {
+            cell.amount?.textColor = UIColor(hex: "#E70866", alpha: 1)
+        }
         
         return cell
     }
@@ -79,11 +84,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         updateBalance()
         
         NotificationCenter.default.addObserver(self, selector: #selector(walletDidAddNotification), name: Notification.Name("WalletDidAdd"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(transactionDidAddNotification), name: Notification.Name("TransactionDidAdd"), object: nil)
         print(myWallets)
         dateFormatter.dateFormat = "dd MMM yyyy"
-        
-        myTransactions.removeAll()
-        
+                
         tableView.register(UINib(nibName: "TransactionHomeTableViewCell", bundle: .main), forCellReuseIdentifier: "tableHomeCell")
         tableView.rowHeight = 0.203562 * view.frame.size.width
         
@@ -96,22 +100,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         layout.scrollDirection = .horizontal
         collectionView.collectionViewLayout = layout
 
-        if myTransactions.count == 0 {
-            myTransactions.append(TransactionItem(title: "Test1", category: "test", amount: 10, date: Date(), type: .expense))
-            myTransactions.append(TransactionItem(title: "Test2", category: "test", amount: 20, date: Date(), type: .income))
-            myTransactions.append(TransactionItem(title: "Test3", category: "test", amount: 30, date: Date(), type: .expense))
-            myTransactions.append(TransactionItem(title: "Test3", category: "test", amount: 30, date: Date(), type: .expense))
-            myTransactions.append(TransactionItem(title: "Test3", category: "test", amount: 30, date: Date(), type: .expense))
-            myTransactions.append(TransactionItem(title: "Test3", category: "test", amount: 30, date: Date(), type: .expense))
-            myTransactions.append(TransactionItem(title: "Test3", category: "test", amount: 30, date: Date(), type: .expense))
-            myTransactions.append(TransactionItem(title: "Test3", category: "test", amount: 30, date: Date(), type: .expense))
-            myTransactions.append(TransactionItem(title: "Test3", category: "test", amount: 30, date: Date(), type: .expense))
-            myTransactions.append(TransactionItem(title: "Test3", category: "test", amount: 30, date: Date(), type: .expense))
-        }
     }
     
     @objc func walletDidAddNotification() {
         // Reload UICollectionView khi nhận được thông báo "WalletDidAdd"
+        collectionView.reloadData()
+        updateBalance()
+    }
+    
+    @objc func transactionDidAddNotification() {
+        tableView.reloadData()
         collectionView.reloadData()
         updateBalance()
     }

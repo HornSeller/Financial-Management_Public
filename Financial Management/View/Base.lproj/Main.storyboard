@@ -340,7 +340,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="udB-4x-uOO">
-                                        <rect key="frame" x="50" y="301" width="293" height="34"/>
+                                        <rect key="frame" x="50" y="376" width="293" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -349,7 +349,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OFb-YQ-hxu">
-                                        <rect key="frame" x="50" y="397" width="293" height="34"/>
+                                        <rect key="frame" x="50" y="289" width="293" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -358,7 +358,7 @@
                                         </connections>
                                     </textField>
                                     <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="XyY-rE-bDP">
-                                        <rect key="frame" x="134" y="456" width="125" height="60"/>
+                                        <rect key="frame" x="134" y="490" width="125" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <locale key="locale" localeIdentifier="en"/>
                                     </datePicker>
@@ -369,15 +369,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsJ-iC-f4a">
-                                        <rect key="frame" x="50" y="272" width="190" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsJ-iC-f4a">
+                                        <rect key="frame" x="50" y="347" width="190" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U61-b1-HQs">
-                                        <rect key="frame" x="50" y="368" width="190" height="21"/>
+                                        <rect key="frame" x="50" y="260" width="190" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -402,6 +402,22 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A93-yG-Pzy">
+                                        <rect key="frame" x="50" y="455" width="293" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="bzB-zu-rst" id="wVr-50-FcD"/>
+                                        </connections>
+                                    </textField>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Plan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dqi-uW-nce">
+                                        <rect key="frame" x="50" y="426" width="190" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -418,11 +434,13 @@
                     <navigationItem key="navigationItem" id="5Gk-r9-Tjz"/>
                     <connections>
                         <outlet property="amountTf" destination="OFb-YQ-hxu" id="d7C-3U-yWl"/>
-                        <outlet property="categoryTf" destination="udB-4x-uOO" id="oXC-gz-qGX"/>
                         <outlet property="datePicker" destination="XyY-rE-bDP" id="WNd-7v-Q8X"/>
                         <outlet property="doneBtn" destination="2VL-6y-0Tg" id="pOD-MX-amI"/>
+                        <outlet property="planLb" destination="Dqi-uW-nce" id="w5K-Y9-LNj"/>
+                        <outlet property="planTf" destination="A93-yG-Pzy" id="UfU-gt-7hB"/>
                         <outlet property="segmentedControl" destination="eLp-Jm-0p5" id="5aa-pu-Wnj"/>
-                        <outlet property="titleTf" destination="0cM-bP-jg6" id="G7N-IY-lm9"/>
+                        <outlet property="transactionTf" destination="0cM-bP-jg6" id="d9i-vI-KNQ"/>
+                        <outlet property="walletTf" destination="udB-4x-uOO" id="ar8-l5-l7V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LlD-dJ-1b6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -594,6 +612,7 @@
                     <navigationItem key="navigationItem" id="S5C-Xw-xns"/>
                     <connections>
                         <outlet property="amountTf" destination="qbr-O6-pIs" id="y5P-pV-QPI"/>
+                        <outlet property="doneBtn" destination="DrA-xF-gqS" id="5P4-Kf-KuY"/>
                         <outlet property="forWalletTf" destination="R1d-q5-fLL" id="1gj-fr-WVY"/>
                         <outlet property="planNameTf" destination="Wjf-Kg-aXy" id="6Js-Yj-c3d"/>
                     </connections>

@@ -14,7 +14,8 @@ enum TransactionType: String, Codable {
 
 struct TransactionItem: Codable {
     var title: String
-    var category: String
+    var inWallet: String
+    var forPlan: String
     var amount: Double
     var date: Date
     var type: TransactionType
