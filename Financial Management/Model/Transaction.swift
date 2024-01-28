@@ -14,6 +14,7 @@ enum TransactionType: String, Codable {
 
 struct TransactionItem: Codable {
     var title: String
+    var id: Int
     var inWallet: String
     var forPlan: String
     var amount: Double

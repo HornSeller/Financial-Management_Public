@@ -57,6 +57,10 @@ class PlanViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         collectionView.collectionViewLayout = layout
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        collectionView.reloadData()
+    }
     @IBAction func addPlanBtnTapped(_ sender: UIButton) {
         self.performSegue(withIdentifier: "planSegue", sender: self)
     }

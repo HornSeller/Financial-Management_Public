@@ -10,17 +10,29 @@ import UIKit
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        myWallets.count
+        collectionViewData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionHomeCell", for: indexPath) as! TransactionHomeCollectionViewCell
-        cell.titleLb.text = myWallets[indexPath.row].name
-        cell.balanceLb.text = numberFormatter.string(for: myWallets[indexPath.row].amount)
+        cell.titleLb.text = collectionViewData[indexPath.row].name
+        cell.balanceLb.text = numberFormatter.string(for: collectionViewData[indexPath.row].amount)
         cell.moreBtn.showsMenuAsPrimaryAction = true
         cell.moreBtn.menu = UIMenu(title: "", options: .displayInline, children: [
             UIAction(title: "Delete", handler: { (_) in
-                
+                let alert = UIAlertController(title: "Do you really want to delete this wallet?", message: "All Transactions and Plans of this Wallet will be deleted", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: { (_) in
+                    self.myTransactions.removeAll { $0.inWallet == self.collectionViewData[indexPath.row].name }
+                    self.myPlans.removeAll { $0.forWallet == self.collectionViewData[indexPath.row].name }
+                    self.myWallets.removeAll { $0.name == self.collectionViewData[indexPath.row].name }
+                    self.collectionViewData = self.myWallets.reversed()
+                    self.collectionView.reloadData()
+                    self.tableViewData = self.myTransactions.reversed()
+                    self.tableView.reloadData()
+                    self.updateBalance()
+                }))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+                self.present(alert, animated: true)
             }),
             
             UIAction(title: "Edit", handler: { (_) in
@@ -32,20 +44,21 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        myTransactions.count
+        tableViewData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableHomeCell", for: indexPath) as! TransactionHomeTableViewCell
-        cell.title?.text = myTransactions[indexPath.row].title
-        cell.wallet?.text = myTransactions[indexPath.row].inWallet
-        cell.amount?.text = numberFormatter.string(for: myTransactions[indexPath.row].amount)
-        cell.date?.text = dateFormatter.string(from: myTransactions[indexPath.row].date)
-        if myTransactions[indexPath.row].type == .income {
+        cell.title?.text = tableViewData[indexPath.row].title
+        cell.wallet?.text = tableViewData[indexPath.row].inWallet
+        if tableViewData[indexPath.row].type == .income {
             cell.amount?.textColor = UIColor(hex: "#22BB7B", alpha: 1)
+            cell.amount?.text = "+\(numberFormatter.string(for: tableViewData[indexPath.row].amount) ?? "0")"
         } else {
             cell.amount?.textColor = UIColor(hex: "#E70866", alpha: 1)
+            cell.amount?.text = "-\(numberFormatter.string(for: tableViewData[indexPath.row].amount) ?? "0")"
         }
+        cell.date?.text = dateFormatter.string(from: tableViewData[indexPath.row].date)
         
         return cell
     }
@@ -53,6 +66,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     let dateFormatter = DateFormatter()
     var userDefaults = UserDefaults.standard
     let numberFormatter = NumberFormatter()
+    var tableViewData: [TransactionItem] = []
+    var collectionViewData: [WalletItem] = []
     var myTransactions: [TransactionItem] {
         get {
             return Transaction.shared.transactions
@@ -69,6 +84,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             Wallet.shared.wallets = newValue
         }
     }
+    var myPlans: [PlanItem] {
+        get {
+            return Plan.shared.plans
+        }
+        set {
+            Plan.shared.plans = newValue
+        }
+    }
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
@@ -76,10 +99,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var balanceLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UserDefaults.standard.register(defaults: ["transactionId": 0])
+        
         addTransactionBtn.layer.cornerRadius = addTransactionBtn.frame.size.height / 2 - 1
         numberFormatter.numberStyle = .decimal
         tableView.reloadData()
         collectionView.reloadData()
+        tableViewData = myTransactions.reversed()
+        collectionViewData = myWallets.reversed()
         
         updateBalance()
         
@@ -102,13 +130,24 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableViewData = myTransactions.reversed()
+        collectionViewData = myWallets.reversed()
+        tableView.reloadData()
+        collectionView.reloadData()
+        updateBalance()
+    }
+    
     @objc func walletDidAddNotification() {
         // Reload UICollectionView khi nhận được thông báo "WalletDidAdd"
+        collectionViewData = myWallets.reversed()
         collectionView.reloadData()
         updateBalance()
     }
     
     @objc func transactionDidAddNotification() {
+        tableViewData = myTransactions.reversed()
+        collectionViewData = myWallets.reversed()
         tableView.reloadData()
         collectionView.reloadData()
         updateBalance()
@@ -119,31 +158,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func addTransactionBtnTapped(_ sender: UIButton) {
-//        let alert = UIAlertController(title: "Enter the transaction", message: nil, preferredStyle: .alert)
-//        alert.addTextField() { (textfield) in
-//            textfield.placeholder = "Enter amount here"
-//            textfield.keyboardType = .numberPad
-//        }
-//        
-//        alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { [weak alert] (_) in
-//            let textField = alert?.textFields![0]
-//            var currentAmount = self.userDefaults.value(forKey: "balance") as! Double
-//            print(currentAmount)
-//            if let text = textField?.text, let doubleValue = Double(text) {
-//                currentAmount += doubleValue
-//            }
-//            print(currentAmount)
-//            self.userDefaults.set(currentAmount, forKey: "balance")
-//            
-//            self.balanceLabel.text = self.numberFormatter.string(from: self.userDefaults.value(forKey: "balance") as! NSNumber)
-//        }))
-//        
-//        present(alert, animated: true)
         self.performSegue(withIdentifier: "addTransactionSegue", sender: self)
     }
     
     @IBAction func viewAllBtnTapped(_ sender: UIButton) {
-        print(myTransactions)
+        self.navigationController?.pushViewController(ViewAllHistoryViewController.makeSelf(), animated: true)
     }
     
     func updateBalance() {

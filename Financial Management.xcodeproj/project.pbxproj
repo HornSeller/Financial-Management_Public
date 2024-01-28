@@ -22,6 +22,9 @@
 		04208F9A2B2CAE010036258B /* AddWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04208F992B2CAE010036258B /* AddWalletViewController.swift */; };
 		0472FCFA2B2A1C02006D0529 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0472FCF92B2A1C02006D0529 /* HomeViewController.swift */; };
 		04E98F512B62E542002D98C0 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E98F502B62E542002D98C0 /* ColorExtension.swift */; };
+		04E98F532B660609002D98C0 /* ViewAllHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E98F522B660609002D98C0 /* ViewAllHistoryViewController.swift */; };
+		04E98F562B660F62002D98C0 /* ViewAllHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E98F542B660F62002D98C0 /* ViewAllHistoryTableViewCell.swift */; };
+		04E98F572B660F62002D98C0 /* ViewAllHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E98F552B660F62002D98C0 /* ViewAllHistoryTableViewCell.xib */; };
 		9AEBB7752B5FA8480044DEA9 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBB7742B5FA8480044DEA9 /* PlanViewController.swift */; };
 		9AEBB7782B5FABDE0044DEA9 /* PlanCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBB7762B5FABDE0044DEA9 /* PlanCollectionViewCell.swift */; };
 		9AEBB7792B5FABDE0044DEA9 /* PlanCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AEBB7772B5FABDE0044DEA9 /* PlanCollectionViewCell.xib */; };
@@ -47,6 +50,9 @@
 		04208F992B2CAE010036258B /* AddWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWalletViewController.swift; sourceTree = "<group>"; };
 		0472FCF92B2A1C02006D0529 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		04E98F502B62E542002D98C0 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		04E98F522B660609002D98C0 /* ViewAllHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllHistoryViewController.swift; sourceTree = "<group>"; };
+		04E98F542B660F62002D98C0 /* ViewAllHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		04E98F552B660F62002D98C0 /* ViewAllHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewAllHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		9AEBB7742B5FA8480044DEA9 /* PlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		9AEBB7762B5FABDE0044DEA9 /* PlanCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCollectionViewCell.swift; sourceTree = "<group>"; };
 		9AEBB7772B5FABDE0044DEA9 /* PlanCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -108,12 +114,14 @@
 			children = (
 				0472FCF92B2A1C02006D0529 /* HomeViewController.swift */,
 				9AEBB7742B5FA8480044DEA9 /* PlanViewController.swift */,
+				04E98F522B660609002D98C0 /* ViewAllHistoryViewController.swift */,
 				04208F992B2CAE010036258B /* AddWalletViewController.swift */,
 				04208F912B2B6A490036258B /* AddTransactionViewController.swift */,
 				9AEBB77A2B5FBEBF0044DEA9 /* AddPlanViewController.swift */,
 				04208F8D2B2AAA590036258B /* TransactionHomeTableViewCell.swift */,
 				04208F932B2B7FCF0036258B /* TransactionHomeCollectionViewCell.swift */,
 				9AEBB7762B5FABDE0044DEA9 /* PlanCollectionViewCell.swift */,
+				04E98F542B660F62002D98C0 /* ViewAllHistoryTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -126,6 +134,7 @@
 				04208F8E2B2AAA590036258B /* TransactionHomeTableViewCell.xib */,
 				04208F942B2B7FCF0036258B /* TransactionHomeCollectionViewCell.xib */,
 				9AEBB7772B5FABDE0044DEA9 /* PlanCollectionViewCell.xib */,
+				04E98F552B660F62002D98C0 /* ViewAllHistoryTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,6 +214,7 @@
 				04208F902B2AAA590036258B /* TransactionHomeTableViewCell.xib in Resources */,
 				041154C92B0BA4FE00AF439D /* Main.storyboard in Resources */,
 				9AEBB7792B5FABDE0044DEA9 /* PlanCollectionViewCell.xib in Resources */,
+				04E98F572B660F62002D98C0 /* ViewAllHistoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E98F532B660609002D98C0 /* ViewAllHistoryViewController.swift in Sources */,
 				04208F982B2CA84D0036258B /* Wallet.swift in Sources */,
 				9AEBB7752B5FA8480044DEA9 /* PlanViewController.swift in Sources */,
 				041154C22B0BA4FE00AF439D /* AppDelegate.swift in Sources */,
@@ -229,6 +240,7 @@
 				04208F922B2B6A490036258B /* AddTransactionViewController.swift in Sources */,
 				04208F8C2B2A9F5F0036258B /* Transaction.swift in Sources */,
 				0472FCFA2B2A1C02006D0529 /* HomeViewController.swift in Sources */,
+				04E98F562B660F62002D98C0 /* ViewAllHistoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

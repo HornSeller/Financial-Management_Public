@@ -149,13 +149,14 @@ class AddTransactionViewController: UIViewController, UITextFieldDelegate, UIPic
             }
             
             if let text = amountTf.text, let amount = Double(text) {
-                let newTransaction = TransactionItem(title: transactionTf.text!, inWallet: walletTf.text!, forPlan: "None", amount: amount, date: datePicker.date, type: .income)
+                let newTransaction = TransactionItem(title: transactionTf.text!, id: UserDefaults.standard.integer(forKey: "transactionId"),inWallet: walletTf.text!, forPlan: "None", amount: amount, date: datePicker.date, type: .income)
                 myTransactions.append(newTransaction)
+                UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "transactionId") + 1, forKey: "transactionId")
                 for i in 0 ..< myWallets.count {
                     if myWallets[i].name == walletTf.text {
                         myWallets[i].amount += amount
+                        break
                     }
-                    break
                 }
                 self.dismiss(animated: true) {
                     NotificationCenter.default.post(name: Notification.Name("TransactionDidAdd"), object: nil)
@@ -200,9 +201,9 @@ class AddTransactionViewController: UIViewController, UITextFieldDelegate, UIPic
                     }
                 }
                 
-                let newTransaction = TransactionItem(title: transactionTf.text!, inWallet: walletTf.text!, forPlan: planTf.text!, amount: amount, date: datePicker.date, type: .expense)
+                let newTransaction = TransactionItem(title: transactionTf.text!, id: UserDefaults.standard.integer(forKey: "transactionId"), inWallet: walletTf.text!, forPlan: planTf.text!, amount: amount, date: datePicker.date, type: .expense)
                 myTransactions.append(newTransaction)
-                
+                UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "transactionId") + 1, forKey: "transactionId")
                 self.dismiss(animated: true) {
                     NotificationCenter.default.post(name: Notification.Name("TransactionDidAdd"), object: nil)
                 }
