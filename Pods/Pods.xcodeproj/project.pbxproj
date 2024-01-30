@@ -1,0 +1,626 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		029A9A4F3A831C66730168A7300397E4 /* PasscodeKitVerify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEE9ABDCA0C0667CDBE6C16A231185D /* PasscodeKitVerify.swift */; };
+		093987FB4E712F983AA7B9DFBB112957 /* PasscodeKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFDB9C71DF5EDA78DF0C7CBA97B0198 /* PasscodeKit.swift */; };
+		19E7F77DFFF4044DF5C1D40E0B6B98E8 /* Pods-Financial Management-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 754C74C4D96F6694D9743734A7AF093D /* Pods-Financial Management-dummy.m */; };
+		213628CD52157B4E828FF8FA81C2CBAA /* PasscodeKitCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15123782B1BA044546031A70FE3719B /* PasscodeKitCreate.swift */; };
+		2BDFCD1AD61FA437DF469A95C8AFCEAC /* PasscodeKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D436E05D949C11F36EC3F48D7C76AB /* PasscodeKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4129B6407A7B2B511C4D16BBBBEAEA7B /* PasscodeKitChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B37E68B3E3EE1B85E942AB81AB0B99 /* PasscodeKitChange.swift */; };
+		7124BB50960CDE0FE8FD83833771F5EC /* PasscodeKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E59415B25E359731041332D82C77B6 /* PasscodeKit-dummy.m */; };
+		9D628AC15A27CD3F5B24166B52098CF0 /* PasscodeKitRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB80391B7786CA0CB779713AC6A3338 /* PasscodeKitRemove.swift */; };
+		C13022312000B2AF2F97965D9C719FC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		C820AEEEBFE799A42537250D9A4F0282 /* Pods-Financial Management-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 93ECA5E0743AEF9CDC5337826A86164D /* Pods-Financial Management-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D25B80F7EFEECAB2117F79005F150DE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		EFC5E1FE728A26352942C39945275CE8 /* PasscodeKitText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745E57D7FA89D4905FD58D94765697FC /* PasscodeKitText.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AE3048243609B4F9BADC913429D0C1DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FC1C2177F46A9075150837838486637;
+			remoteInfo = PasscodeKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0306EEE89980301DA93E388BC929544C /* PasscodeKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PasscodeKit.release.xcconfig; sourceTree = "<group>"; };
+		07D436E05D949C11F36EC3F48D7C76AB /* PasscodeKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PasscodeKit-umbrella.h"; sourceTree = "<group>"; };
+		0DF5AC9BB37FA5CA42E1AF2358CFA04E /* Pods-Financial Management-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Financial Management-acknowledgements.markdown"; sourceTree = "<group>"; };
+		25B37E68B3E3EE1B85E942AB81AB0B99 /* PasscodeKitChange.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PasscodeKitChange.swift; path = PasscodeKit/Sources/PasscodeKitChange.swift; sourceTree = "<group>"; };
+		2662AF3C6E9735E875BFD7B86DE06F47 /* Pods-Financial Management.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Financial Management.release.xcconfig"; sourceTree = "<group>"; };
+		4522A7EFD7FE7813865D9B855FAE38F1 /* PasscodeKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PasscodeKit-prefix.pch"; sourceTree = "<group>"; };
+		5C9A29FEA5FAA2A5197D538BCD345252 /* Pods-Financial Management */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Financial Management"; path = Pods_Financial_Management.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		639C7156A2F266CB6E7F16BA9A8051E9 /* Pods-Financial Management-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Financial Management-frameworks.sh"; sourceTree = "<group>"; };
+		63D0DE0A0B57D9BDD656F1A390814D00 /* Pods-Financial Management.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Financial Management.modulemap"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		745E57D7FA89D4905FD58D94765697FC /* PasscodeKitText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PasscodeKitText.swift; path = PasscodeKit/Sources/PasscodeKitText.swift; sourceTree = "<group>"; };
+		754C74C4D96F6694D9743734A7AF093D /* Pods-Financial Management-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Financial Management-dummy.m"; sourceTree = "<group>"; };
+		93ECA5E0743AEF9CDC5337826A86164D /* Pods-Financial Management-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Financial Management-umbrella.h"; sourceTree = "<group>"; };
+		981995AA9F5B71EBEAADA75A7D649450 /* Pods-Financial Management.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Financial Management.debug.xcconfig"; sourceTree = "<group>"; };
+		9BEE9ABDCA0C0667CDBE6C16A231185D /* PasscodeKitVerify.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PasscodeKitVerify.swift; path = PasscodeKit/Sources/PasscodeKitVerify.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A5D9281F41AD0E4C5DF0ABB59BBBA996 /* PasscodeKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PasscodeKit.debug.xcconfig; sourceTree = "<group>"; };
+		B5E59415B25E359731041332D82C77B6 /* PasscodeKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PasscodeKit-dummy.m"; sourceTree = "<group>"; };
+		B661A20997BE9F2F6B33828C111237E9 /* PasscodeKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PasscodeKit.modulemap; sourceTree = "<group>"; };
+		BE85D3781DC0C0ADDDFBA5B813445290 /* PasscodeKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PasscodeKit-Info.plist"; sourceTree = "<group>"; };
+		C8746351E83E04D1989B4C5045D3DB7B /* Pods-Financial Management-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Financial Management-Info.plist"; sourceTree = "<group>"; };
+		CBFDB9C71DF5EDA78DF0C7CBA97B0198 /* PasscodeKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PasscodeKit.swift; path = PasscodeKit/Sources/PasscodeKit.swift; sourceTree = "<group>"; };
+		CDB80391B7786CA0CB779713AC6A3338 /* PasscodeKitRemove.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PasscodeKitRemove.swift; path = PasscodeKit/Sources/PasscodeKitRemove.swift; sourceTree = "<group>"; };
+		E15123782B1BA044546031A70FE3719B /* PasscodeKitCreate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PasscodeKitCreate.swift; path = PasscodeKit/Sources/PasscodeKitCreate.swift; sourceTree = "<group>"; };
+		E3CDF54C02AB86C8AF670E088CBD9F8D /* Pods-Financial Management-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Financial Management-acknowledgements.plist"; sourceTree = "<group>"; };
+		F73157B7938233AA919AEEE2253C63E6 /* PasscodeKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PasscodeKit; path = PasscodeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		56E10096E8402C92346F8F9F48BC4EA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C13022312000B2AF2F97965D9C719FC6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD1E396A2AF22787928530D09A73103D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D25B80F7EFEECAB2117F79005F150DE3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		584D1AE89A0DBF219F6614B35D0D612C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F73157B7938233AA919AEEE2253C63E6 /* PasscodeKit */,
+				5C9A29FEA5FAA2A5197D538BCD345252 /* Pods-Financial Management */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		646F0D089B6090E9D90A47B271A1D938 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B661A20997BE9F2F6B33828C111237E9 /* PasscodeKit.modulemap */,
+				B5E59415B25E359731041332D82C77B6 /* PasscodeKit-dummy.m */,
+				BE85D3781DC0C0ADDDFBA5B813445290 /* PasscodeKit-Info.plist */,
+				4522A7EFD7FE7813865D9B855FAE38F1 /* PasscodeKit-prefix.pch */,
+				07D436E05D949C11F36EC3F48D7C76AB /* PasscodeKit-umbrella.h */,
+				A5D9281F41AD0E4C5DF0ABB59BBBA996 /* PasscodeKit.debug.xcconfig */,
+				0306EEE89980301DA93E388BC929544C /* PasscodeKit.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PasscodeKit";
+			sourceTree = "<group>";
+		};
+		B28551F4CF49543522189AED10A984B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CFDD2F7E8C7A227A1106B8A195A3C5C7 /* PasscodeKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C5846428CD5F3E65B5BF08F6FD01C573 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D1524CFDC59D5C95CBE73830D1232740 /* Pods-Financial Management */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				B28551F4CF49543522189AED10A984B5 /* Pods */,
+				584D1AE89A0DBF219F6614B35D0D612C /* Products */,
+				C5846428CD5F3E65B5BF08F6FD01C573 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		CFDD2F7E8C7A227A1106B8A195A3C5C7 /* PasscodeKit */ = {
+			isa = PBXGroup;
+			children = (
+				CBFDB9C71DF5EDA78DF0C7CBA97B0198 /* PasscodeKit.swift */,
+				25B37E68B3E3EE1B85E942AB81AB0B99 /* PasscodeKitChange.swift */,
+				E15123782B1BA044546031A70FE3719B /* PasscodeKitCreate.swift */,
+				CDB80391B7786CA0CB779713AC6A3338 /* PasscodeKitRemove.swift */,
+				745E57D7FA89D4905FD58D94765697FC /* PasscodeKitText.swift */,
+				9BEE9ABDCA0C0667CDBE6C16A231185D /* PasscodeKitVerify.swift */,
+				646F0D089B6090E9D90A47B271A1D938 /* Support Files */,
+			);
+			name = PasscodeKit;
+			path = PasscodeKit;
+			sourceTree = "<group>";
+		};
+		D1524CFDC59D5C95CBE73830D1232740 /* Pods-Financial Management */ = {
+			isa = PBXGroup;
+			children = (
+				63D0DE0A0B57D9BDD656F1A390814D00 /* Pods-Financial Management.modulemap */,
+				0DF5AC9BB37FA5CA42E1AF2358CFA04E /* Pods-Financial Management-acknowledgements.markdown */,
+				E3CDF54C02AB86C8AF670E088CBD9F8D /* Pods-Financial Management-acknowledgements.plist */,
+				754C74C4D96F6694D9743734A7AF093D /* Pods-Financial Management-dummy.m */,
+				639C7156A2F266CB6E7F16BA9A8051E9 /* Pods-Financial Management-frameworks.sh */,
+				C8746351E83E04D1989B4C5045D3DB7B /* Pods-Financial Management-Info.plist */,
+				93ECA5E0743AEF9CDC5337826A86164D /* Pods-Financial Management-umbrella.h */,
+				981995AA9F5B71EBEAADA75A7D649450 /* Pods-Financial Management.debug.xcconfig */,
+				2662AF3C6E9735E875BFD7B86DE06F47 /* Pods-Financial Management.release.xcconfig */,
+			);
+			name = "Pods-Financial Management";
+			path = "Target Support Files/Pods-Financial Management";
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3888A25B608A661B5BFF2BC931F64C42 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C820AEEEBFE799A42537250D9A4F0282 /* Pods-Financial Management-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94727A237FF9C9546A07E2023D1F3319 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BDFCD1AD61FA437DF469A95C8AFCEAC /* PasscodeKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3FC1C2177F46A9075150837838486637 /* PasscodeKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A97632E96329651DA27ED7233659B716 /* Build configuration list for PBXNativeTarget "PasscodeKit" */;
+			buildPhases = (
+				94727A237FF9C9546A07E2023D1F3319 /* Headers */,
+				91C821389D6CC8B24F4934296C702111 /* Sources */,
+				FD1E396A2AF22787928530D09A73103D /* Frameworks */,
+				556542AA190D8E1BFD8797EE68CF3FC9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PasscodeKit;
+			productName = PasscodeKit;
+			productReference = F73157B7938233AA919AEEE2253C63E6 /* PasscodeKit */;
+			productType = "com.apple.product-type.framework";
+		};
+		D85C4536FDE8C0311F604BA71381BA23 /* Pods-Financial Management */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EAD04F7A73A72B85F83C0C31A4DA99B /* Build configuration list for PBXNativeTarget "Pods-Financial Management" */;
+			buildPhases = (
+				3888A25B608A661B5BFF2BC931F64C42 /* Headers */,
+				4DBB2422171F4A4608E560B3B7FB5405 /* Sources */,
+				56E10096E8402C92346F8F9F48BC4EA9 /* Frameworks */,
+				762BC2CDDD4760A6709AFAF0863E6016 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				60CD01A7F3B1A9D7DED3D3D070EFE6F7 /* PBXTargetDependency */,
+			);
+			name = "Pods-Financial Management";
+			productName = Pods_Financial_Management;
+			productReference = 5C9A29FEA5FAA2A5197D538BCD345252 /* Pods-Financial Management */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 584D1AE89A0DBF219F6614B35D0D612C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3FC1C2177F46A9075150837838486637 /* PasscodeKit */,
+				D85C4536FDE8C0311F604BA71381BA23 /* Pods-Financial Management */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		556542AA190D8E1BFD8797EE68CF3FC9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		762BC2CDDD4760A6709AFAF0863E6016 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4DBB2422171F4A4608E560B3B7FB5405 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19E7F77DFFF4044DF5C1D40E0B6B98E8 /* Pods-Financial Management-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91C821389D6CC8B24F4934296C702111 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				093987FB4E712F983AA7B9DFBB112957 /* PasscodeKit.swift in Sources */,
+				7124BB50960CDE0FE8FD83833771F5EC /* PasscodeKit-dummy.m in Sources */,
+				4129B6407A7B2B511C4D16BBBBEAEA7B /* PasscodeKitChange.swift in Sources */,
+				213628CD52157B4E828FF8FA81C2CBAA /* PasscodeKitCreate.swift in Sources */,
+				9D628AC15A27CD3F5B24166B52098CF0 /* PasscodeKitRemove.swift in Sources */,
+				EFC5E1FE728A26352942C39945275CE8 /* PasscodeKitText.swift in Sources */,
+				029A9A4F3A831C66730168A7300397E4 /* PasscodeKitVerify.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		60CD01A7F3B1A9D7DED3D3D070EFE6F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PasscodeKit;
+			target = 3FC1C2177F46A9075150837838486637 /* PasscodeKit */;
+			targetProxy = AE3048243609B4F9BADC913429D0C1DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		041A25B1D4451A14403496E14F0A1E49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 981995AA9F5B71EBEAADA75A7D649450 /* Pods-Financial Management.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Financial Management/Pods-Financial Management-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Financial Management/Pods-Financial Management.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6A5C026ED62BBFE3380CD257EEFAEB20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		92A2FBBBCF5C053E44E9AA905A32C81C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0306EEE89980301DA93E388BC929544C /* PasscodeKit.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PasscodeKit/PasscodeKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PasscodeKit/PasscodeKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PasscodeKit/PasscodeKit.modulemap";
+				PRODUCT_MODULE_NAME = PasscodeKit;
+				PRODUCT_NAME = PasscodeKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A016C52FD355446B3BAF18CE8C3D67BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5D9281F41AD0E4C5DF0ABB59BBBA996 /* PasscodeKit.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PasscodeKit/PasscodeKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PasscodeKit/PasscodeKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PasscodeKit/PasscodeKit.modulemap";
+				PRODUCT_MODULE_NAME = PasscodeKit;
+				PRODUCT_NAME = PasscodeKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AE46D5BC30FBD09F905B0D89D3658592 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2662AF3C6E9735E875BFD7B86DE06F47 /* Pods-Financial Management.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Financial Management/Pods-Financial Management-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Financial Management/Pods-Financial Management.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E873CA97BD124B21839AF13C9BE1CD18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A5C026ED62BBFE3380CD257EEFAEB20 /* Debug */,
+				E873CA97BD124B21839AF13C9BE1CD18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EAD04F7A73A72B85F83C0C31A4DA99B /* Build configuration list for PBXNativeTarget "Pods-Financial Management" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				041A25B1D4451A14403496E14F0A1E49 /* Debug */,
+				AE46D5BC30FBD09F905B0D89D3658592 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A97632E96329651DA27ED7233659B716 /* Build configuration list for PBXNativeTarget "PasscodeKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A016C52FD355446B3BAF18CE8C3D67BD /* Debug */,
+				92A2FBBBCF5C053E44E9AA905A32C81C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

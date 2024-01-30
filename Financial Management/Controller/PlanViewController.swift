@@ -22,16 +22,63 @@ class PlanViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         if myPlans[indexPath.row].used / myPlans[indexPath.row].amount > 1 {
             cell.progressView.progressTintColor = .red
         }
+        cell.moreBtn.showsMenuAsPrimaryAction = true
+        cell.moreBtn.menu = UIMenu(options: .displayInline, children: [
+            UIAction(title: "Delete", handler: { (_) in
+                let alert = UIAlertController(title: "Do you really want to delete this plan?", message: "All Transactions of this Plan will be deleted", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: { (_) in
+                    let wallet = self.myPlans[indexPath.row].forWallet
+                    for transaction in self.myTransactions {
+                        if transaction.inWallet == wallet && transaction.forPlan == self.myPlans[indexPath.row].name {
+                            if let walletIndex = self.myWallets.firstIndex(where: { walletItem in
+                                walletItem.name == wallet
+                            }) {
+                                if transaction.type == .income {
+                                    self.myWallets[walletIndex].amount -= transaction.amount
+                                } else {
+                                    self.myWallets[walletIndex].amount += transaction.amount
+                                }
+                            }
+                            self.myTransactions.removeAll(where: { $0.id == transaction.id })
+                        }
+                    }
+                    self.myPlans.remove(at: indexPath.row)
+                    collectionView.reloadData()
+                }))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+                self.present(alert, animated: true)
+            }),
+            
+            UIAction(title: "Edit", handler: { (_) in
+                
+            })
+        ])
         
         return cell
     }
     
+    var myWallets: [WalletItem] {
+        get {
+            return Wallet.shared.wallets
+        }
+        set {
+            Wallet.shared.wallets = newValue
+        }
+    }
     var myPlans: [PlanItem] {
         get {
             return Plan.shared.plans
         }
         set {
             Plan.shared.plans = newValue
+        }
+    }
+    var myTransactions: [TransactionItem] {
+        get {
+            return Transaction.shared.transactions
+        }
+        set {
+            Transaction.shared.transactions = newValue
         }
     }
 

@@ -1,0 +1,6 @@
+framework module Pods_Financial_Management {
+  umbrella header "Pods-Financial Management-umbrella.h"
+
+  export *
+  module * { export * }
+}

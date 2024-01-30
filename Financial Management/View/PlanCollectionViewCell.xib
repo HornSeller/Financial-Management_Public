@@ -67,6 +67,12 @@
                                 <color key="textColor" red="0.21176470588235294" green="0.41568627450980389" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6UG-vh-gIT">
+                                <rect key="frame" x="317" y="148" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="View all btn"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -74,6 +80,7 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
+                <outlet property="moreBtn" destination="6UG-vh-gIT" id="hJA-My-W9W"/>
                 <outlet property="planNameLb" destination="Fge-dd-oQg" id="k0E-Al-X34"/>
                 <outlet property="progressView" destination="nrs-3G-6Y6" id="cv8-bP-MYB"/>
                 <outlet property="spendLb" destination="7gC-br-LWK" id="o0K-DZ-jD4"/>
@@ -85,6 +92,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="View all btn" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

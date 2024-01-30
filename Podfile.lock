@@ -1,0 +1,16 @@
+PODS:
+  - PasscodeKit (1.0.4)
+
+DEPENDENCIES:
+  - PasscodeKit
+
+SPEC REPOS:
+  trunk:
+    - PasscodeKit
+
+SPEC CHECKSUMS:
+  PasscodeKit: ef46a237bdf5d7e551a2dbe3e8fe53d2ca58c10b
+
+PODFILE CHECKSUM: fde77c4f70871bc5802ea512e6b093651a670493
+
+COCOAPODS: 1.13.0

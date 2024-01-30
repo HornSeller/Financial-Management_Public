@@ -25,11 +25,13 @@
 		04E98F532B660609002D98C0 /* ViewAllHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E98F522B660609002D98C0 /* ViewAllHistoryViewController.swift */; };
 		04E98F562B660F62002D98C0 /* ViewAllHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E98F542B660F62002D98C0 /* ViewAllHistoryTableViewCell.swift */; };
 		04E98F572B660F62002D98C0 /* ViewAllHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E98F552B660F62002D98C0 /* ViewAllHistoryTableViewCell.xib */; };
+		9ADFB4572B689FB10037E80F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADFB4562B689FB10037E80F /* SettingViewController.swift */; };
 		9AEBB7752B5FA8480044DEA9 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBB7742B5FA8480044DEA9 /* PlanViewController.swift */; };
 		9AEBB7782B5FABDE0044DEA9 /* PlanCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBB7762B5FABDE0044DEA9 /* PlanCollectionViewCell.swift */; };
 		9AEBB7792B5FABDE0044DEA9 /* PlanCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AEBB7772B5FABDE0044DEA9 /* PlanCollectionViewCell.xib */; };
 		9AEBB77B2B5FBEBF0044DEA9 /* AddPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBB77A2B5FBEBF0044DEA9 /* AddPlanViewController.swift */; };
 		9AEBB77D2B5FBF190044DEA9 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBB77C2B5FBF190044DEA9 /* Plan.swift */; };
+		AC55E02EA4EDD38D68E2C5FD /* Pods_Financial_Management.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE454C70849AAF071C5B21AA /* Pods_Financial_Management.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,11 +55,15 @@
 		04E98F522B660609002D98C0 /* ViewAllHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllHistoryViewController.swift; sourceTree = "<group>"; };
 		04E98F542B660F62002D98C0 /* ViewAllHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		04E98F552B660F62002D98C0 /* ViewAllHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewAllHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		8141E520100FDC3E79021940 /* Pods-Financial Management.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Financial Management.release.xcconfig"; path = "Target Support Files/Pods-Financial Management/Pods-Financial Management.release.xcconfig"; sourceTree = "<group>"; };
+		9ADFB4562B689FB10037E80F /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		9AEBB7742B5FA8480044DEA9 /* PlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		9AEBB7762B5FABDE0044DEA9 /* PlanCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCollectionViewCell.swift; sourceTree = "<group>"; };
 		9AEBB7772B5FABDE0044DEA9 /* PlanCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanCollectionViewCell.xib; sourceTree = "<group>"; };
 		9AEBB77A2B5FBEBF0044DEA9 /* AddPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanViewController.swift; sourceTree = "<group>"; };
 		9AEBB77C2B5FBF190044DEA9 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
+		A79E134AAF06130B05B9FBB7 /* Pods-Financial Management.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Financial Management.debug.xcconfig"; path = "Target Support Files/Pods-Financial Management/Pods-Financial Management.debug.xcconfig"; sourceTree = "<group>"; };
+		EE454C70849AAF071C5B21AA /* Pods_Financial_Management.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Financial_Management.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC55E02EA4EDD38D68E2C5FD /* Pods_Financial_Management.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +83,8 @@
 			children = (
 				041154C02B0BA4FE00AF439D /* Financial Management */,
 				041154BF2B0BA4FE00AF439D /* Products */,
+				E835FD5F83E5F59FE6AE75BC /* Pods */,
+				C6C62D09F0550CBB7B19133E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +124,7 @@
 				0472FCF92B2A1C02006D0529 /* HomeViewController.swift */,
 				9AEBB7742B5FA8480044DEA9 /* PlanViewController.swift */,
 				04E98F522B660609002D98C0 /* ViewAllHistoryViewController.swift */,
+				9ADFB4562B689FB10037E80F /* SettingViewController.swift */,
 				04208F992B2CAE010036258B /* AddWalletViewController.swift */,
 				04208F912B2B6A490036258B /* AddTransactionViewController.swift */,
 				9AEBB77A2B5FBEBF0044DEA9 /* AddPlanViewController.swift */,
@@ -150,6 +160,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		C6C62D09F0550CBB7B19133E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE454C70849AAF071C5B21AA /* Pods_Financial_Management.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E835FD5F83E5F59FE6AE75BC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A79E134AAF06130B05B9FBB7 /* Pods-Financial Management.debug.xcconfig */,
+				8141E520100FDC3E79021940 /* Pods-Financial Management.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -157,9 +184,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 041154D22B0BA50000AF439D /* Build configuration list for PBXNativeTarget "Financial Management" */;
 			buildPhases = (
+				3956E9CB755D1AEFD2DB3121 /* [CP] Check Pods Manifest.lock */,
 				041154BA2B0BA4FE00AF439D /* Sources */,
 				041154BB2B0BA4FE00AF439D /* Frameworks */,
 				041154BC2B0BA4FE00AF439D /* Resources */,
+				ECCDF846C5214CE16CD3ECFA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -220,6 +249,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3956E9CB755D1AEFD2DB3121 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Financial Management-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECCDF846C5214CE16CD3ECFA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Financial Management/Pods-Financial Management-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Financial Management/Pods-Financial Management-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Financial Management/Pods-Financial Management-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		041154BA2B0BA4FE00AF439D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -230,6 +301,7 @@
 				9AEBB7752B5FA8480044DEA9 /* PlanViewController.swift in Sources */,
 				041154C22B0BA4FE00AF439D /* AppDelegate.swift in Sources */,
 				04208F8F2B2AAA590036258B /* TransactionHomeTableViewCell.swift in Sources */,
+				9ADFB4572B689FB10037E80F /* SettingViewController.swift in Sources */,
 				9AEBB77D2B5FBF190044DEA9 /* Plan.swift in Sources */,
 				04E98F512B62E542002D98C0 /* ColorExtension.swift in Sources */,
 				041154C42B0BA4FE00AF439D /* SceneDelegate.swift in Sources */,
@@ -387,11 +459,14 @@
 		};
 		041154D32B0BA50000AF439D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A79E134AAF06130B05B9FBB7 /* Pods-Financial Management.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2FX323KNBX;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Financial Management/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -414,11 +489,14 @@
 		};
 		041154D42B0BA50000AF439D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8141E520100FDC3E79021940 /* Pods-Financial Management.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2FX323KNBX;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Financial Management/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
