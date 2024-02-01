@@ -15,7 +15,11 @@ class ViewAllHistoryViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "viewAllHistoryCell", for: indexPath) as! ViewAllHistoryTableViewCell
         cell.transNameLb.text = tableViewData[indexPath.row].title
-        cell.walletNameLb.text = tableViewData[indexPath.row].inWallet
+        if tableViewData[indexPath.row].forPlan != "None" {
+            cell.walletNameLb.text = "\(tableViewData[indexPath.row].inWallet)/\(tableViewData[indexPath.row].forPlan)"
+        } else {
+            cell.walletNameLb.text = tableViewData[indexPath.row].inWallet
+        }
         if tableViewData[indexPath.row].type == .income {
             cell.amountLb?.textColor = UIColor(hex: "#22BB7B", alpha: 1)
             cell.amountLb?.text = "+\(numberFormatter.string(for: tableViewData[indexPath.row].amount) ?? "0")"
