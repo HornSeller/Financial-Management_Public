@@ -75,6 +75,18 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate, UIPickerVi
             return
         }
         
+        let containsWalletName = myWallets.contains { item in
+            return item.name.lowercased() == walletNameTf.text?.lowercased()
+        }
+        
+        if containsWalletName {
+            let alert = UIAlertController(title: "Error", message: "Wallet name has already existed", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
+            
+            return
+        }
+        
         if let text = amountTf.text, let amount = Double(text) {
             // Successfully converted text to a Double
             let newWallet = WalletItem(name: walletNameTf.text!, icon: iconTf.text!, amount: amount)

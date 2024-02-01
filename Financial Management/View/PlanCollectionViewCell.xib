@@ -21,10 +21,6 @@
                         <rect key="frame" x="20" y="8" width="353" height="184"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nrs-3G-6Y6">
-                                <rect key="frame" x="58" y="131" width="236" height="4"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coffee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fge-dd-oQg">
                                 <rect key="frame" x="20" y="18" width="152" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -77,6 +73,18 @@
                                 <color key="textColor" red="0.59215686274509804" green="0.60784313725490191" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gdC-ph-iwo">
+                                <rect key="frame" x="20" y="113" width="313" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sU1-Ng-gwJ">
+                                <rect key="frame" x="20" y="148" width="74" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -84,10 +92,11 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
+                <outlet property="baseView" destination="gdC-ph-iwo" id="C4Q-1o-p4e"/>
                 <outlet property="iconImageView" destination="Cq0-Vb-ULQ" id="8gz-94-9Dy"/>
                 <outlet property="moreBtn" destination="6UG-vh-gIT" id="hJA-My-W9W"/>
+                <outlet property="percentLb" destination="sU1-Ng-gwJ" id="nqA-21-9Lj"/>
                 <outlet property="planNameLb" destination="Fge-dd-oQg" id="k0E-Al-X34"/>
-                <outlet property="progressView" destination="nrs-3G-6Y6" id="cv8-bP-MYB"/>
                 <outlet property="spendLb" destination="7gC-br-LWK" id="o0K-DZ-jD4"/>
                 <outlet property="subview" destination="Std-pb-aps" id="caw-VL-S0h"/>
                 <outlet property="totalLb" destination="8cJ-mC-UgO" id="sWT-dm-hjp"/>

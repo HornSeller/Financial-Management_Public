@@ -18,13 +18,24 @@ class PlanViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         cell.walletNameLb.text = myPlans[indexPath.row].forWallet
         cell.totalLb.text = numberformatter.string(for: myPlans[indexPath.row].amount)
         cell.spendLb.text = numberformatter.string(for: myPlans[indexPath.row].used)
-        cell.progressView.progress = Float(myPlans[indexPath.row].used / myPlans[indexPath.row].amount)
-        if myPlans[indexPath.row].used / myPlans[indexPath.row].amount > 1 {
-            cell.progressView.progressTintColor = .red
+        let progress = myPlans[indexPath.row].used / myPlans[indexPath.row].amount
+        cell.trackView.removeFromSuperview()
+        cell.trackView.frame = CGRect(x: 0, y: 0, width: progress * cell.baseView.frame.width, height: cell.baseView.frame.height)
+        cell.baseView.addSubview(cell.trackView)
+        if progress <= 0.3 {
+            cell.trackView.backgroundColor = UIColor(hex: "#22BB7B", alpha: 1)
+            cell.percentLb.textColor = UIColor(hex: "#22BB7B", alpha: 1)
+        } else if progress > 0.3 && progress <= 0.8 {
+            cell.trackView.backgroundColor = UIColor(hex: "#366AF0", alpha: 1)
+            cell.percentLb.textColor = UIColor(hex: "#366AF0", alpha: 1)
+        } else {
+            cell.trackView.backgroundColor = UIColor(hex: "#E70866", alpha: 1)
+            cell.percentLb.textColor = UIColor(hex: "#E70866", alpha: 1)
         }
         if let walletIndex = myWallets.firstIndex(where: { $0.name == myPlans[indexPath.row].forWallet }) {
             cell.iconImageView.image = UIImage(named: myWallets[walletIndex].icon)
         }
+        cell.percentLb.text = "\(Int(progress * 100))%"
         cell.moreBtn.showsMenuAsPrimaryAction = true
         cell.moreBtn.menu = UIMenu(options: .displayInline, children: [
             UIAction(title: "Delete", handler: { (_) in

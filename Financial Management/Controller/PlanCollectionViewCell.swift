@@ -15,12 +15,18 @@ class PlanCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var totalLb: UILabel!
     @IBOutlet weak var spendLb: UILabel!
     @IBOutlet weak var subview: UIView!
-    @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var baseView: UIView!
+    @IBOutlet weak var percentLb: UILabel!
+    
+    let trackView = UIView()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         subview.layer.cornerRadius = 16
+        baseView.layer.cornerRadius = 6
+        trackView.layer.cornerRadius = 6
     }
 
 }

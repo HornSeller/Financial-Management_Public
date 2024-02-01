@@ -4,10 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Financial Management.xcscheme_^#shared#^_</key>
+		<key>PasscodeKit.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>1</integer>
+		</dict>
+		<key>Pods-Financial Management.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
 		</dict>
 	</dict>
 </dict>

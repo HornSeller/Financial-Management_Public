@@ -99,6 +99,18 @@ class AddPlanViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             return
         }
         
+        let containsPlanName = myPlans.contains { item in
+            return item.name.lowercased() == planNameTf.text?.lowercased()
+        }
+        
+        if containsPlanName {
+            let alert = UIAlertController(title: "Error", message: "Plan name has already existed", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
+            
+            return
+        }
+        
         if let text = amountTf.text, let amount = Double(text) {
             // Successfully converted text to a Double
             let newPlan = PlanItem(name: planNameTf.text!, forWallet: forWalletTf.text!, amount: amount, used: 0)
