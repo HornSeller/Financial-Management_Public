@@ -228,7 +228,7 @@ class AddTransactionViewController: UIViewController, UITextFieldDelegate, UIPic
             transactionTf.text = ""
             walletTf.text = ""
             amountTf.text = ""
-            planTf.text = ""
+            planTf.text = "None"
             planTf.isHidden = true
             planLb.isHidden = true
             segmentedControl.selectedSegmentTintColor = UIColor(hex: "#26E494", alpha: 1)
@@ -238,7 +238,7 @@ class AddTransactionViewController: UIViewController, UITextFieldDelegate, UIPic
             transactionTf.text = ""
             walletTf.text = ""
             amountTf.text = ""
-            planTf.text = ""
+            planTf.text = "None"
             planTf.isHidden = false
             planLb.isHidden = false
             segmentedControl.selectedSegmentTintColor = UIColor(hex: "#E70866", alpha: 1)

@@ -13,6 +13,7 @@ class TransactionHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var wallet: UILabel?
     @IBOutlet weak var amount: UILabel?
     @IBOutlet weak var date: UILabel?
+    @IBOutlet weak var iconImgView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

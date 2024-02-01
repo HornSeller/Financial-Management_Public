@@ -53,6 +53,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="balanceLb" destination="1ln-qp-9dp" id="nmd-Mm-Ffo"/>
+                <outlet property="iconImgView" destination="yQE-iK-iL5" id="kyo-bU-goI"/>
                 <outlet property="moreBtn" destination="1IE-pG-Pbs" id="AJ6-2z-AJc"/>
                 <outlet property="titleLb" destination="GPa-jS-sdm" id="6Bq-Qr-Xue"/>
                 <outlet property="view" destination="UgL-2q-V8Q" id="rce-Ja-OQW"/>

@@ -7,7 +7,22 @@
 
 import UIKit
 
-class AddWalletViewController: UIViewController, UITextFieldDelegate {
+class AddWalletViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        myIcons.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return myIcons[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        iconTf.text = myIcons[row]
+    }
     
     var myWallets: [WalletItem] {
         get {
@@ -18,6 +33,9 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    let pickerView = UIPickerView()
+    let myIcons: [String] = ["Food & Drink", "Shopping", "Housing", "Transportation", "Vehicle", "Life Style", "Geek", "Other"]
+    
     @IBOutlet weak var walletNameTf: UITextField!
     @IBOutlet weak var iconTf: UITextField!
     @IBOutlet weak var amountTf: UITextField!
@@ -25,6 +43,10 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        iconTf.inputView = pickerView
 
         doneBtn.layer.cornerRadius = doneBtn.frame.size.height / 3
         
@@ -32,6 +54,16 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         view.addGestureRecognizer(tapGesture)
+        
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneTfButtonTapped))
+        toolbar.setItems([doneButton], animated: false)
+        iconTf.inputAccessoryView = toolbar
+    }
+    
+    @objc func doneTfButtonTapped() {
+        iconTf.resignFirstResponder()
     }
     
     @IBAction func doneBtnTapped(_ sender: UIButton) {

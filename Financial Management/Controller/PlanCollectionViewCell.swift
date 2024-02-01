@@ -16,6 +16,7 @@ class PlanCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var spendLb: UILabel!
     @IBOutlet weak var subview: UIView!
     @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var iconImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

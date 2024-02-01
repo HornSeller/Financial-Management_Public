@@ -25,6 +25,9 @@
 		04E98F532B660609002D98C0 /* ViewAllHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E98F522B660609002D98C0 /* ViewAllHistoryViewController.swift */; };
 		04E98F562B660F62002D98C0 /* ViewAllHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E98F542B660F62002D98C0 /* ViewAllHistoryTableViewCell.swift */; };
 		04E98F572B660F62002D98C0 /* ViewAllHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E98F552B660F62002D98C0 /* ViewAllHistoryTableViewCell.xib */; };
+		9ACA39EB2B6B42760058E618 /* AnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACA39EA2B6B42760058E618 /* AnalyticsViewController.swift */; };
+		9ACA39EE2B6B46A00058E618 /* AnalyticsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACA39EC2B6B46A00058E618 /* AnalyticsCollectionViewCell.swift */; };
+		9ACA39EF2B6B46A00058E618 /* AnalyticsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ACA39ED2B6B46A00058E618 /* AnalyticsCollectionViewCell.xib */; };
 		9ADFB4572B689FB10037E80F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADFB4562B689FB10037E80F /* SettingViewController.swift */; };
 		9AEBB7752B5FA8480044DEA9 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBB7742B5FA8480044DEA9 /* PlanViewController.swift */; };
 		9AEBB7782B5FABDE0044DEA9 /* PlanCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBB7762B5FABDE0044DEA9 /* PlanCollectionViewCell.swift */; };
@@ -56,6 +59,9 @@
 		04E98F542B660F62002D98C0 /* ViewAllHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		04E98F552B660F62002D98C0 /* ViewAllHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewAllHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		8141E520100FDC3E79021940 /* Pods-Financial Management.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Financial Management.release.xcconfig"; path = "Target Support Files/Pods-Financial Management/Pods-Financial Management.release.xcconfig"; sourceTree = "<group>"; };
+		9ACA39EA2B6B42760058E618 /* AnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewController.swift; sourceTree = "<group>"; };
+		9ACA39EC2B6B46A00058E618 /* AnalyticsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsCollectionViewCell.swift; sourceTree = "<group>"; };
+		9ACA39ED2B6B46A00058E618 /* AnalyticsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnalyticsCollectionViewCell.xib; sourceTree = "<group>"; };
 		9ADFB4562B689FB10037E80F /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		9AEBB7742B5FA8480044DEA9 /* PlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		9AEBB7762B5FABDE0044DEA9 /* PlanCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -122,8 +128,9 @@
 			isa = PBXGroup;
 			children = (
 				0472FCF92B2A1C02006D0529 /* HomeViewController.swift */,
-				9AEBB7742B5FA8480044DEA9 /* PlanViewController.swift */,
 				04E98F522B660609002D98C0 /* ViewAllHistoryViewController.swift */,
+				9ACA39EA2B6B42760058E618 /* AnalyticsViewController.swift */,
+				9AEBB7742B5FA8480044DEA9 /* PlanViewController.swift */,
 				9ADFB4562B689FB10037E80F /* SettingViewController.swift */,
 				04208F992B2CAE010036258B /* AddWalletViewController.swift */,
 				04208F912B2B6A490036258B /* AddTransactionViewController.swift */,
@@ -132,6 +139,7 @@
 				04208F932B2B7FCF0036258B /* TransactionHomeCollectionViewCell.swift */,
 				9AEBB7762B5FABDE0044DEA9 /* PlanCollectionViewCell.swift */,
 				04E98F542B660F62002D98C0 /* ViewAllHistoryTableViewCell.swift */,
+				9ACA39EC2B6B46A00058E618 /* AnalyticsCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -145,6 +153,7 @@
 				04208F942B2B7FCF0036258B /* TransactionHomeCollectionViewCell.xib */,
 				9AEBB7772B5FABDE0044DEA9 /* PlanCollectionViewCell.xib */,
 				04E98F552B660F62002D98C0 /* ViewAllHistoryTableViewCell.xib */,
+				9ACA39ED2B6B46A00058E618 /* AnalyticsCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -244,6 +253,7 @@
 				041154C92B0BA4FE00AF439D /* Main.storyboard in Resources */,
 				9AEBB7792B5FABDE0044DEA9 /* PlanCollectionViewCell.xib in Resources */,
 				04E98F572B660F62002D98C0 /* ViewAllHistoryTableViewCell.xib in Resources */,
+				9ACA39EF2B6B46A00058E618 /* AnalyticsCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,11 +317,13 @@
 				041154C42B0BA4FE00AF439D /* SceneDelegate.swift in Sources */,
 				9AEBB77B2B5FBEBF0044DEA9 /* AddPlanViewController.swift in Sources */,
 				04208F9A2B2CAE010036258B /* AddWalletViewController.swift in Sources */,
+				9ACA39EB2B6B42760058E618 /* AnalyticsViewController.swift in Sources */,
 				9AEBB7782B5FABDE0044DEA9 /* PlanCollectionViewCell.swift in Sources */,
 				04208F952B2B7FCF0036258B /* TransactionHomeCollectionViewCell.swift in Sources */,
 				04208F922B2B6A490036258B /* AddTransactionViewController.swift in Sources */,
 				04208F8C2B2A9F5F0036258B /* Transaction.swift in Sources */,
 				0472FCFA2B2A1C02006D0529 /* HomeViewController.swift in Sources */,
+				9ACA39EE2B6B46A00058E618 /* AnalyticsCollectionViewCell.swift in Sources */,
 				04E98F562B660F62002D98C0 /* ViewAllHistoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,6 +486,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -504,6 +517,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

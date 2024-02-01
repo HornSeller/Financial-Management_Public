@@ -22,6 +22,9 @@ class PlanViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         if myPlans[indexPath.row].used / myPlans[indexPath.row].amount > 1 {
             cell.progressView.progressTintColor = .red
         }
+        if let walletIndex = myWallets.firstIndex(where: { $0.name == myPlans[indexPath.row].forWallet }) {
+            cell.iconImageView.image = UIImage(named: myWallets[walletIndex].icon)
+        }
         cell.moreBtn.showsMenuAsPrimaryAction = true
         cell.moreBtn.menu = UIMenu(options: .displayInline, children: [
             UIAction(title: "Delete", handler: { (_) in

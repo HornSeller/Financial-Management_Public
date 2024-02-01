@@ -13,6 +13,7 @@ class TransactionHomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var balanceLb: UILabel!
     @IBOutlet weak var moreBtn: UIButton!
     @IBOutlet weak var view: UIView!
+    @IBOutlet weak var iconImgView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

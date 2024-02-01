@@ -17,6 +17,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionHomeCell", for: indexPath) as! TransactionHomeCollectionViewCell
         cell.titleLb.text = collectionViewData[indexPath.row].name
         cell.balanceLb.text = numberFormatter.string(for: collectionViewData[indexPath.row].amount)
+        cell.iconImgView.image = UIImage(named: collectionViewData[indexPath.row].icon)
         cell.moreBtn.showsMenuAsPrimaryAction = true
         cell.moreBtn.menu = UIMenu(title: "", options: .displayInline, children: [
             UIAction(title: "Delete", handler: { (_) in
@@ -50,7 +51,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableHomeCell", for: indexPath) as! TransactionHomeTableViewCell
         cell.title?.text = tableViewData[indexPath.row].title
-        cell.wallet?.text = tableViewData[indexPath.row].inWallet
+        if tableViewData[indexPath.row].forPlan != "None" {
+            cell.wallet?.text = "\(tableViewData[indexPath.row].inWallet)/\(tableViewData[indexPath.row].forPlan)"
+        } else {
+            cell.wallet?.text = tableViewData[indexPath.row].inWallet
+        }
         if tableViewData[indexPath.row].type == .income {
             cell.amount?.textColor = UIColor(hex: "#22BB7B", alpha: 1)
             cell.amount?.text = "+\(numberFormatter.string(for: tableViewData[indexPath.row].amount) ?? "0")"
@@ -59,6 +64,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.amount?.text = "-\(numberFormatter.string(for: tableViewData[indexPath.row].amount) ?? "0")"
         }
         cell.date?.text = dateFormatter.string(from: tableViewData[indexPath.row].date)
+        if let walletIndex = myWallets.firstIndex(where: { $0.name == tableViewData[indexPath.row].inWallet }) {
+            cell.iconImgView.image = UIImage(named: myWallets[walletIndex].icon)
+        }
         
         return cell
     }

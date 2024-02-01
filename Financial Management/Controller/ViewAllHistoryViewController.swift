@@ -29,6 +29,9 @@ class ViewAllHistoryViewController: UIViewController, UITableViewDelegate, UITab
         } else {
             cell.iconImageView.image = UIImage(named: "Food & Drink")
         }
+        if let walletIndex = myWallets.firstIndex(where: { $0.name == tableViewData[indexPath.row].inWallet }) {
+            cell.iconImageView.image = UIImage(named: myWallets[walletIndex].icon)
+        }
         print(tableViewData[indexPath.row].id)
         return cell
     }
