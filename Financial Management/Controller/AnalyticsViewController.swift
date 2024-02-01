@@ -222,20 +222,29 @@ class AnalyticsViewController: UIViewController, UICollectionViewDelegateFlowLay
                     incomePercentLb.text = "\(Int((incomeAmount / expenseAmount) * 100))%"
                     expensePercentLb.text = "100%"
                 } else {
-                    view1.frame = CGRect(x: 0, y: 0, width: incomeBaseView.frame.width, height: incomeBaseView.frame.height)
+                    if incomeAmount == 0 {
+                        view1.frame = CGRect(x: 0, y: 0, width: 0, height: incomeBaseView.frame.height)
+                        incomePercentLb.text = "0%"
+                    } else {
+                        view1.frame = CGRect(x: 0, y: 0, width: incomeBaseView.frame.width, height: incomeBaseView.frame.height)
+                        incomePercentLb.text = "100%"
+                    }
                     view1.backgroundColor = UIColor(hex: "#22BB7B", alpha: 1)
                     view1.autoresizingMask = [.flexibleWidth, .flexibleHeight]
                     view1.layer.cornerRadius = 6
                     incomeBaseView.addSubview(view1)
                     
-                    view2.frame = CGRect(x: 0, y: 0, width: expenseBaseView.frame.width, height: expenseBaseView.frame.height)
+                    if expenseAmount == 0 {
+                        view2.frame = CGRect(x: 0, y: 0, width: 0, height: expenseBaseView.frame.height)
+                        expensePercentLb.text = "0%"
+                    } else {
+                        view2.frame = CGRect(x: 0, y: 0, width: expenseBaseView.frame.width, height: expenseBaseView.frame.height)
+                        expensePercentLb.text = "100%"
+                    }
                     view2.backgroundColor = UIColor(hex: "#E70866", alpha: 1)
                     view2.autoresizingMask = [.flexibleWidth, .flexibleHeight]
                     view2.layer.cornerRadius = 6
                     expenseBaseView.addSubview(view2)
-                    
-                    incomePercentLb.text = "100%"
-                    expensePercentLb.text = "100%"
                 }
                 
                 incomeAmountLB.text = "\(numberFormatter.string(for: Int(incomeAmount)) ?? "0")"
