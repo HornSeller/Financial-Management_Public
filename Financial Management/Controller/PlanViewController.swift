@@ -63,8 +63,32 @@ class PlanViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
                 self.present(alert, animated: true)
             }),
             
-            UIAction(title: "Edit", handler: { (_) in
-                
+            UIAction(title: "Rename", handler: { (_) in
+                let alert = UIAlertController(title: "Enter the new name", message: nil, preferredStyle: .alert)
+                alert.addTextField()
+                alert.addAction(UIAlertAction(title: "Rename", style: .default, handler: { [weak alert] (_) in
+                    let textField = alert?.textFields![0]
+                    if textField?.text == "" {
+                        let alert = UIAlertController(title: "Error", message: "Please enter plan name", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+                        self.present(alert, animated: true)
+                        return
+                    }
+                    
+                    if let planIndex = self.myPlans.firstIndex(where: { $0.name == cell.planNameLb.text }) {
+                        self.myPlans[planIndex].name = (textField?.text)!
+                    }
+                    
+                    for i in 0 ..< self.myTransactions.count {
+                        if self.myTransactions[i].forPlan == cell.planNameLb.text {
+                            self.myTransactions[i].forPlan = (textField?.text)!
+                        }
+                    }
+                    
+                    self.collectionView.reloadData()
+                }))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+                self.present(alert, animated: true)
             })
         ])
         

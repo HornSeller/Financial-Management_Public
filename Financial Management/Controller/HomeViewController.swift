@@ -36,8 +36,41 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.present(alert, animated: true)
             }),
             
-            UIAction(title: "Edit", handler: { (_) in
-                
+            UIAction(title: "Rename", handler: { (_) in
+                let alert = UIAlertController(title: "Enter the new name", message: nil, preferredStyle: .alert)
+                alert.addTextField()
+                alert.addAction(UIAlertAction(title: "Rename", style: .default, handler: { [weak alert] (_) in
+                    let textField = alert?.textFields![0]
+                    if textField?.text == "" {
+                        let alert = UIAlertController(title: "Error", message: "Please enter wallet name", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+                        self.present(alert, animated: true)
+                        return
+                    }
+                    
+                    if let walletIndex = self.myWallets.firstIndex(where: { $0.name == cell.titleLb.text }) {
+                        self.myWallets[walletIndex].name = (textField?.text)!
+                    }
+                    
+                    for i in 0 ..< self.myPlans.count {
+                        if self.myPlans[i].forWallet == cell.titleLb.text {
+                            self.myPlans[i].forWallet = (textField?.text)!
+                        }
+                    }
+                    
+                    for i in 0 ..< self.myTransactions.count {
+                        if self.myTransactions[i].inWallet == cell.titleLb.text {
+                            self.myTransactions[i].inWallet = (textField?.text)!
+                        }
+                    }
+                    
+                    self.collectionViewData = self.myWallets.reversed()
+                    self.collectionView.reloadData()
+                    self.tableViewData = self.myTransactions.reversed()
+                    self.tableView.reloadData()
+                }))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+                self.present(alert, animated: true)
             })
         ])
         
