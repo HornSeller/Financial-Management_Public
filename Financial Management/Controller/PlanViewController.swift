@@ -57,6 +57,9 @@ class PlanViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
                         }
                     }
                     self.myPlans.remove(at: indexPath.row)
+                    if self.myPlans.count == 0 {
+                        self.backgroundImageView.isHidden = false
+                    }
                     collectionView.reloadData()
                 }))
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
@@ -123,6 +126,8 @@ class PlanViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     let numberformatter = NumberFormatter()
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(myPlans)
@@ -140,6 +145,10 @@ class PlanViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.scrollDirection = .vertical
         collectionView.collectionViewLayout = layout
+        
+        if myPlans.count > 0 {
+            backgroundImageView.isHidden = true
+        }
     }
     
     
@@ -156,6 +165,7 @@ class PlanViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     
     @objc func planDidAddNotification() {
         collectionView.reloadData()
+        backgroundImageView.isHidden = true
     }
     
 }

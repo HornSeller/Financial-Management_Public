@@ -263,6 +263,10 @@
                                             <outlet property="delegate" destination="tx8-EY-02N" id="ey5-5I-9cg"/>
                                         </connections>
                                     </collectionView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame 9" id="f9o-Le-cW5">
+                                        <rect key="frame" x="72" y="265" width="250" height="180"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -278,6 +282,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Planning" image="layers-1--design-layer-layers-pile-stack-align" landscapeImage="layers-1--design-layer-layers-pile-stack-align" largeContentSizeImage="layers-1--design-layer-layers-pile-stack-align" id="558-K3-vqB"/>
                     <connections>
+                        <outlet property="backgroundImageView" destination="f9o-Le-cW5" id="FPs-5a-kZa"/>
                         <outlet property="collectionView" destination="BvZ-t4-ham" id="PHD-jZ-jJB"/>
                         <segue destination="qmq-qi-4AY" kind="presentation" identifier="planSegue" modalPresentationStyle="formSheet" id="dbX-Sn-PhY"/>
                     </connections>
@@ -642,7 +647,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LlD-dJ-1b6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1653" y="2796"/>
+            <point key="canvasLocation" x="-1654.1984732824426" y="2795.7746478873241"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nRu-Hp-2wl">
@@ -1113,6 +1118,7 @@
         <image name="Add Btn" width="45" height="96"/>
         <image name="Btn" width="52" height="52"/>
         <image name="DeleteBtn" width="265" height="52"/>
+        <image name="Frame 9" width="242" height="176"/>
         <image name="Icon" width="36" height="36"/>
         <image name="Icon 1" width="69" height="24"/>
         <image name="Icon 2" width="34" height="34"/>
